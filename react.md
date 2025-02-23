@@ -5,4 +5,4 @@ Through react:
 
  # React.js application is just tree of such Components.
 
-function CountryCard({})
+function CountryCard({country}: {})
