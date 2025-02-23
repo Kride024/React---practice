@@ -5,4 +5,26 @@ Through react:
 
  # React.js application is just tree of such Components.
 
-function CountryCard({country}: {})
+function CountryCard({country}: {country:Country}){
+    return(
+        <link to={`/${country.name.official.toLowerCase()}`} className={style.countryCard}>
+    <img srd={country.flags.svg} alt={country.flag.alt}/>
+    <p className={styles.countryTitle}>{country.name.official</p>
+    <div>
+    <p>
+    <span className={style.infoTopic}>Population:</span>
+    {country.population.toLocale.String()}
+    </p>
+    <p>
+    <span className={style.infoTopic}>Region:</span>
+    {country.region}
+    </p>
+    <p>
+    <span Capital: className={styles.infoTopic}>Capital:</span> {country.capital[0]}</p>
+    </div>
+    
+    </div>
+    
+    
+    );
+}
