@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 
+//Method
 function MyApp(){
     return(
         <div> 
@@ -19,10 +20,14 @@ function MyApp(){
 // }
 //! We Can'nt use it directly it return object but we want .jsx file as function to return
 
+const anotherUser = "chai aur react"
+
 const ReactElement = React.createElement(
     'a',
     { href:'https://google.com',target:'_blank'},
-    'click me to visit google'
+    'click me to visit google',
+    anotherUser,
+    'life'
 )
 
 const anotherElement=(
@@ -34,7 +39,7 @@ const anotherElement=(
 ReactDOM.createRoot(document.getElementById('root')).render(
     // <MyApp/> // This is type of function call
     // anotherElement
-    // ReactElement
+    ReactElement
     // MyApp()
-    <App/>
+    // <App/>
 )
