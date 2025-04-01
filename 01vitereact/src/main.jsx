@@ -9,14 +9,21 @@ function MyApp(){
         </div>
     )
 }
-const reactElement = {
-    type:'a',
-    props:{
-        href: 'https://google.com',
-        target:'_blank'
-    },
-    children: 'click me to visit google'
-}
+// const ReactElement = {
+//     type:'a',
+//     props:{
+//         href: 'https://google.com',
+//         target:'_blank'
+//     },
+//     children: 'click me to visit google'
+// }
+//! We Can'nt use it directly it return object but we want .jsx file as function to return
+
+const ReactElement = React.createElement(
+    'a',
+    { href:'https://google.com',target:'_blank'},
+    'click me to visit google'
+)
 
 const anotherElement=(
  <a href="https://google.com" target='_blank'>visit google</a>
@@ -26,6 +33,8 @@ const anotherElement=(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     // <MyApp/> // This is type of function call
-    anotherElement
+    // anotherElement
+    // ReactElement
     // MyApp()
+    <App/>
 )
