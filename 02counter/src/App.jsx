@@ -1,27 +1,33 @@
-import { useState } from 'react'
+// import React , { useState } from 'react'
+// import  { useState,useEffect } from 'react'
+
+import {useState} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
  
-let count=5
+// let count=5
+let [count, hiteshCounter] = useState(15)
 const Addvalue = ()=>{
-  count++
-  console.log("value added",Math.random());
-  document.getElementById("counter").innerText=`Counter value: ${count}`
+  if(count ==20)hiteshCounter(20)
+  else hiteshCounter(count + 1)
 }
  const Subvalue=()=>{
-  count--
-  document.getElementById("counter").innerText=`Counter value: ${count}`
+  if(count==0){
+hiteshCounter(0)
+  }
+  else hiteshCounter(count-1)
+
  }
 
   return (
     <>
   <h1>Chai aur React</h1>
   <h2 id="counter">Counter value: {count}</h2>
-  <button onClick={Addvalue}>Add value</button>
-  <button onClick={Subvalue}>Remove value</button>
+  <button onClick={Addvalue}>Add value {count}</button>
+  <button onClick={Subvalue}>Remove value {count}</button>
     </>
   )
 }
