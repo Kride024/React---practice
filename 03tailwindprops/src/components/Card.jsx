@@ -5,6 +5,7 @@ function Card({username,Num="4"}) {
 
   
   return (
+    //devUI Component Use Here
     <div>
    <div className="flex flex-col items-center gap-6 p-7 md:flex-row md:gap-8 rounded-2xl">
   <div>
