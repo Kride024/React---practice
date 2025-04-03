@@ -1,6 +1,8 @@
 import React from 'react'
 
-function Card() {
+function Card(props) {
+  console.log("props",props);
+  
   return (
     <div>
    <div class="flex flex-col items-center gap-6 p-7 md:flex-row md:gap-8 rounded-2xl">
