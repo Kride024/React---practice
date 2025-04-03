@@ -9,10 +9,17 @@ import './App.css'
 function App() {
  
 // let count=5
+// you can change let to const and yet make changes
 let [count, hiteshCounter] = useState(15)
 const Addvalue = ()=>{
-  if(count ==20)hiteshCounter(20)
-  else hiteshCounter(count + 1)
+  //! Operation perform in bulk (fibres) so multiple same operation consider one
+  if(count >=20)hiteshCounter(20)
+  else {
+// hiteshCounter(count + 1)
+    hiteshCounter(count=>count+1)
+    hiteshCounter(count=>count+1)
+    
+  }
 }
  const Subvalue=()=>{
   if(count==0){
