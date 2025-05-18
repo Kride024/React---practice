@@ -6,8 +6,9 @@ function App() {
   const [numberAllowed, setNumberAllowed] = useState(false);
   const[charAllowed,setCharAllowed] = useState(false)
   const [password, setPassword]= useState("")
- // useRef hook
- const passwordRef=useRef(null)
+  // useRef hook
+  const passwordRef=useRef(null)
+
   const passwordGenerator = useCallback(()=>{
    let pass = ""
     let str= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -19,22 +20,28 @@ function App() {
     }
     setPassword(pass)
   },[length,numberAllowed,charAllowed,setPassword] )
+
+
   const copyPasswordToClipboard=useCallback(()=>{
     passwordRef.current?.select();// use to initialize selection
     passwordRef.current?.setSelectionRange(0,999); // use to set range to selection
-    window.navigator.clipboard.writeText(password)
-    
+    window.navigator.clipboard.writeText(password) 
+   
   },[password])
+
    useEffect(()=>{
    passwordGenerator()
   },[length, numberAllowed, charAllowed, passwordGenerator])
+  
+  // Basic Tailwind Used Here
+  // ref = {passwordRef} done in input ...for useEffect
   return (
     <>
     <div className='  w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500'>
     <h1 className='text-white text-center my-3'>Password generator</h1>
   <div className='flex shadow rounded-lg overflow-hidden mb-4  '>
     
-    <input type="text" value={password} className='outline-none w-full py-1 px-3 bg-white ' placeholder="Password" readOnly ref={passwordRef}/>
+    <input type="text" value={password} className='outline-none w-full py-1 px-3 bg-white ' placeholder="Password" readOnly ref={passwordRef}/> 
     <button onClick={copyPasswordToClipboard} className=" text-white px-3 py-0.5 shrink-0 rounded-none bg-blue-700">Copy</button>
   </div>
 
@@ -57,8 +64,7 @@ function App() {
     </div>
   </div>
 </div> 
-
-    </>
+ </>
   )
 }
 
